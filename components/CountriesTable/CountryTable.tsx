@@ -49,7 +49,7 @@ const CountryTable = ({ countries }: any) => {
       </div>
       {currentCountries.length > 0 ? currentCountries.map((country: any) => (
         <Link
-          href={`/country/${country.cca3}`}
+          href="/"
           key={country.name.common}
           passHref
         >
