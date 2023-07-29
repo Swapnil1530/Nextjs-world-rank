@@ -39,6 +39,7 @@
   
   .overview_label {
     font-size: 14px;
+    
     color: var(--text-color-secondary);
   }
   
@@ -102,6 +103,7 @@
   
   .details_panel_value {
     text-align: right;
+    font-weight: 600;
   }
   
   .details_panel_borders,

@@ -10,8 +10,7 @@ const Country = async ({params:{id}}:PageProps) => {
 
     return (
         <div>
-             
-         <CountryDetails country={country} />
+             <CountryDetails country={country} />
         </div>
     )
 }

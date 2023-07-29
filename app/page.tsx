@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import { getCountries } from "@/api/getCountries";
 import CountryTable from "@/components/CountriesTable/CountryTable";
 

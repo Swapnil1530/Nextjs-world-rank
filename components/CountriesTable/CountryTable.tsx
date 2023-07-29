@@ -6,9 +6,8 @@ import SearchInput from "../SearchInput/SearchInput";
 import { useEffect, useState } from "react";
 
 const filterCountries = (countries: any, keyword: string) =>
-  countries.filter(
-    (country: any) =>
-      country.name.common.toLowerCase().includes(keyword) 
+  countries.filter((country: any) =>
+    country.name.common.toLowerCase().includes(keyword)
   );
 const CountryTable = ({ countries }: any) => {
   const [keyword, setKeyword] = useState("");
@@ -47,34 +46,38 @@ const CountryTable = ({ countries }: any) => {
 
         <div className={styles.heading_gini}>Gini</div>
       </div>
-      {currentCountries.length > 0 ? currentCountries.map((country: any) => (
-        <Link
-          href={`Country/${country.cca3}`}
-          key={country.name.common}
-          passHref
-        >
-          <div className={styles.row}>
-            <div className={styles.flag}>
-              <Image src={country.flags.svg} alt={country.name.common} fill />
+      {currentCountries.length > 0 ? (
+        currentCountries.map((country: any) => (
+          <Link
+            href={`Country/${country.cca3}`}
+            key={country.name.common}
+            passHref
+          >
+            <div className={styles.row}>
+              <div className={styles.flag}>
+                <Image src={country.flags.svg} alt={country.name.common} fill />
+              </div>
+              <div className={styles.mobileFlag}>{country.flag}</div>
+              <div className={styles.name}>{country.name.common}</div>
+              <div className={styles.population}>{country.population}</div>
+              <div className={styles.area}>{country.area || 0}</div>
+              <div className={styles.gini}>
+                {country.gini ? (
+                  <>
+                    {Object.keys(country.gini).map((year) => (
+                      <div key={year}>{country.gini[year]} %</div>
+                    ))}
+                  </>
+                ) : (
+                  "-"
+                )}
+              </div>
             </div>
-            <div className={styles.mobileFlag}>{country.flag}</div>
-            <div className={styles.name}>{country.name.common}</div>
-            <div className={styles.population}>{country.population}</div>
-            <div className={styles.area}>{country.area || 0}</div>
-            <div className={styles.gini}>
-              {country.gini ? (
-                <>
-                  {Object.keys(country.gini).map((year) => (
-                    <div key={year}>{country.gini[year]} %</div>
-                  ))}
-                </>
-              ) : (
-                "-"
-              )}
-            </div>
-          </div>
-        </Link>
-      )):(<div>No Data Found</div>)}
+          </Link>
+        ))
+      ) : (
+        <div>No Data Found</div>
+      )}
     </div>
   );
 };
