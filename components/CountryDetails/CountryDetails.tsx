@@ -128,30 +128,7 @@ const CountryDetails = ({ country }: any) => {
             </div>
           </div>
 
-          {/* {!hasBorders ? (
-            <div className={styles.details_panel_no_borders}>
-              <div className={styles.details_panel_borders_label}>
-                {translate.country.neighboringCountries}
-              </div>
-              <div className={styles.details_panel_value}>
-                {translate.country.noNeighbors}
-              </div>
-            </div>
-          ) : (
-            // <div className={styles.details_panel_borders}>
-            //   <div className={styles.details_panel_borders_label}>
-            //     {country.neighboringCountries}
-            //   </div>
-            //   <div className={styles.details_panel_borders_container}>
-            //     {bordersLoading && translate.loading}
-            //     {!bordersLoading &&
-            //       borders.map((border) => (
-            //         <NeighboringCountry key={border.cca3} country={border} />
-            //       ))}
-            //   </div>
-            // </div>
-            <></>
-          )} */}
+         
         </div>
       </div>
     </div>
