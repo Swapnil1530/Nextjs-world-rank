@@ -2,7 +2,6 @@ import styles from "./CountryDetails.module.css";
 import Image from "next/image";
 
 const CountryDetails = ({ country }: any) => {
-
   const getCurrencies = () => {
     if (!country.currencies) return "-";
     return Object.keys(country.currencies)
@@ -59,21 +58,7 @@ const CountryDetails = ({ country }: any) => {
         </div>
       </div>
 
-      <div className={styles.container_botton}>
-        {/* <div className={styles.details_map}>
-          <div className={styles.map_heading_container}>
-            <h2 className={styles.details_panel_heading}>Map</h2>
-            <button
-              type="button"
-              title="Google maps link"
-              onClick={() => window.open(country.maps.googleMaps)}
-            >
-              <MapPin />
-            </button>
-          </div>
-          <Mapbox coordinates={country.latlng} />
-        </div> */}
-      </div>
+      <div className={styles.container_botton}></div>
 
       <div className={styles.container_right}>
         <div className={styles.details_panel}>
@@ -127,8 +112,6 @@ const CountryDetails = ({ country }: any) => {
               )}
             </div>
           </div>
-
-         
         </div>
       </div>
     </div>
