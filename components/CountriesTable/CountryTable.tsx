@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./CountriesTable.module.css";
-import SearchInput from "./SearchInput/SearchInput";
+import SearchInput from "../SearchInput/SearchInput";
 import { useEffect, useState } from "react";
 
 const filterCountries = (countries: any, keyword: string) =>
@@ -36,20 +36,20 @@ const CountryTable = ({ countries }: any) => {
       <div className={styles.heading}>
         <div className={styles.heading_flag} />
 
-        <div className={styles.heading_name}>name</div>
+        <div className={styles.heading_name}>Name</div>
 
-        <div className={styles.heading_population}>population</div>
+        <div className={styles.heading_population}>Population</div>
 
         <div className={styles.heading_area}>
           Area (km
           <sup style={{ fontSize: "0.5rem" }}>2</sup>)
         </div>
 
-        <div className={styles.heading_gini}>gini</div>
+        <div className={styles.heading_gini}>Gini</div>
       </div>
       {currentCountries.length > 0 ? currentCountries.map((country: any) => (
         <Link
-          href="/"
+          href={`Country/${country.cca3}`}
           key={country.name.common}
           passHref
         >
