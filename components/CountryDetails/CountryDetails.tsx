@@ -105,7 +105,7 @@ const CountryDetails = async ({ country }: any) => {
           <div className={styles.details_panel_row}>
             <div
               className={styles.details_panel_label}
-              //   title={giniDefinition}
+              // title={giniDefinition}
             >
               Gini
             </div>
@@ -135,9 +135,9 @@ const CountryDetails = async ({ country }: any) => {
                   Neighboring Countries
                 </div>
                 <div className={styles.details_panel_borders_container}>
-                  {border.map((data: any) => {
-                    return <NeighboringCountry border={data} />;
-                  })}
+                  {border.map((data: any) => (
+                    <NeighboringCountry key={data.cca3} border={data} />
+                  ))}
                 </div>
               </div>
             )}
