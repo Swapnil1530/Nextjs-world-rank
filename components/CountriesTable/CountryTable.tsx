@@ -49,9 +49,10 @@ const CountryTable = ({ countries }: any) => {
       {currentCountries.length > 0 ? (
         currentCountries.map((country: any) => (
           <Link
-            href={`Country/${country.cca3}`}
+            href={`country/${country.cca3}`}
             key={country.name.common}
             passHref
+            prefetch
           >
             <div className={styles.row}>
               <div className={styles.flag}>
